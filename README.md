@@ -1,1 +1,1 @@
-aloncar.github.io —> inputbase.com
+inputbase.com

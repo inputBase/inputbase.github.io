@@ -1,1 +1,1 @@
-# inputbase.github.io —> inputbase.com
+inputbase.github.io -> inputbase.com

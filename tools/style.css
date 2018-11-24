@@ -9,15 +9,17 @@ height: 100%;
 body{
 margin:0;
 padding:0;
-background:#374140;
+ /* background-color:#374140; */
+ /* background-color:#651015; */
+  background: linear-gradient(-45deg, #374140, #651015); /* Standard syntax */
 font-family:"Helvetica Neue",Helvetica, Arial;
 }
 
 div#shim{
 visibility: hidden;
 width: 100%;
-height: 50%;                                                                     
-margin-top: -140px;                                                              
+height: 50%;
+margin-top: -140px;
 float: left;
 }
 

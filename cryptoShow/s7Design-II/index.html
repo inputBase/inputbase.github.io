@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145415354-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-145415354-1');
+        </script>
+
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
+
+        <title>React u 10K 'laganih koraka'</title>
+
+        <meta name="description" content="React cookbook workshop" />
+        <meta name="author" content="Aleksandar Lončar" />
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="black-translucent"
+        />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/reveal.css" />
+        <link rel="stylesheet" href="css/theme/serif.css" id="theme" />
+        <!-- <link rel="stylesheet" href="css/theme/black.css" id="theme"> -->
+
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/monokai.css" />
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement("link");
+            link.rel = "stylesheet";
+            link.type = "text/css";
+            link.href = window.location.search.match(/print-pdf/gi)
+                ? "css/print/pdf.css"
+                : "css/print/paper.css";
+            document.getElementsByTagName("head")[0].appendChild(link);
+        </script>
+    </head>
+
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <div class="slides">
+                    <section><!-- Slide 1 -->
+                        <h1>React II</h1>
+                        <h3>u 10K 'laganih koraka'</h3>
+                        <p>
+                            <small>Kreiran od strane - <a href="https://www.linkedin.com/in/aloncar/" target="_blank">Aleksandara Lončara</a></small>
+                        </p>
+                    </section>
+
+                    <section><!-- Slide 2 -->
+                        <h1>React</h1>
+                        <p>
+                            <small>bibliteka za prikaz korisničkog interfejsa i baratanje događajima</small>
+                        </p>
+                        <p>
+                            <small>(render UI & handle events)</small>
+                        </p>
+                    </section>
+
+                    <section><!-- Slide 3 -->
+                        <h4>Šta ćete danas raditi? <b>crypto-show</b></h4>
+                        <font size="4">
+                            <table>
+                                <thead>
+                                    <tr><th>Cilj je pravljenje front-end aplikacije za prikaz cena najpopularnijih kripto valuta</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>prikazati listu najpopularnijih kripto valuta, <a href="https://sandbox.coinmarketcap.com/api/v1/">CoinMarketCap API</a></td></tr>
+                                    <tr><td>krajnji korisnik će imati mogućnost selektovanja različitih fiat valuta (USD, EUR, CNY)</td></tr>
+                                    <tr><td>detaljan prikaz selektovane kripto valute u zavisnosti od fiat valute</td></tr>
+                                    <tr><td>filter/search za svaki parametar, sortiranje po parametrima</td></tr>
+                                    <tr><td>dugme za refresh i auto-refresh liste nakon određenog vremenskog intervala...</td></tr>
+                                    <tr><td>...</td></tr>
+                                    <tr></tr>
+                                </tbody>
+                            </table>
+                        </font>
+                    </section>
+
+                    <section> <!-- Slide 4 -->
+                        <h4>Kako React 'radi'?</h4>
+                        <p><small>1. Označite komponente na osnovu mockup-a</small></p>
+                        <p><small>2. Napravite statičku verziju, bez interakcije</small></p>
+                        <p><small>3. Identifikujete minimalnu ali konačnu listu (stanje) 'state'</small></p>
+                        <p><small>4. Implementirate event handling, odnosno 'state'</small></p>
+                        <p><small>5. Ako je potrebno, onda dodate 'Inverse Data Flow'</small></p>
+                        <br />
+                        <h4 class="fragment">Nemojte zaboraviti zašto ovo radite</h4>
+                        <p class="fragment"><small>Da bi ste bili bolji i konkurentniji</small></p>
+                    </section>
+
+                    <section> <!-- Slide 5 -->
+                        <p>Za kvalitetan React kod, neophodno je razumeti</p>
+                        <p>
+                            <small>JavaScript, EcmaScript2015 i EcmaScript2016</small>
+                        </p>
+                        <font size="4">
+                            <table>
+                                <thead>
+                                    <tr><th></th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>javaScript klase (Classes)</td></tr>
+                                    <tr><td>arrow functions</td></tr>
+                                    <tr><td>funkcije kao React komponente</td></tr>
+                                    <tr><td>template literals</td></tr>
+                                    <tr><td>map, reduce, filter</td></tr>
+                                    <tr><td>let, const & !var</td></tr>
+                                    <tr><td>ternary operator</td></tr>
+                                    <tr><td>import & export statements</td></tr>
+                                    <tr><td>async/await EcmaScript2016</td></tr>
+                                    <tr><td>funkcije višeg reda (higher-order functions)</td></tr>
+                                    <tr><td>shorthand object assignment</td></tr>
+                                    <tr><td>object destructuring</td></tr>
+                                    <tr><td>spread operator</td></tr>
+                                    <tr><td>...</td></tr>
+                                    <tr></tr>
+                                </tbody>
+                            </table>
+                        </font>
+                    </section>
+
+                    <section> <!-- Slide 6 -->
+                        <h4>Preduslovi</h4>
+                        <p><small>Chrome, React Plugin, Visual Studio Code</small></p>
+                        <p><small><a href="https://pro.coinmarketcap.com/login">CoinMarketCap API key</a></small></p>
+                        <p><small><a href="gitlab.com">Gitlab nalog</a> i pristup projektu React u 10K 'laganih koraka</a></small></p>
+                        <p><small><a href="https://reactjs.org/docs">Trebaće vam React dokumentacija</a></small></p>
+                    </section>
+
+                    <section> <!-- Slide 7 -->
+                        <h4>Pre sledećeg predavanja implementirati</h4>
+                        <p><small>'Details' komponentu za kliknutu kolonu i izabranu valutu, npr. ETC i EUR</small></p>
+                        <p><small>Filter/Search nad tabelom u App komponenti</small></p>
+                        <p><small>Kreirajte branch na gitlab-u sa vašim email-om bez domena, npr. 'contact'</small></p>
+                    </section>
+
+                    <section> <!-- Slide 7 -->
+                        <h4>Sledeći put radite napredne tehnike</h4>
+                        <p><small>Hooks</small></p>
+                        <p><small>Fragments</small></p>
+                        <p><small>Higher-Order Components</small></p>
+                        <p><small>API References...</small></p>
+                        <p><small>Routing</small></p>
+                        <p><small>History</small></p>
+                        <h4>Nad istim kodom</h4>
+                    </section>
+
+                    <section> <!-- Slide 8 -->
+                        <p>
+                            <small>
+                                U slučaju da vam treba pomoć kontaktirajte me putem email-a <email class="fragment highlight-red">contact@inputbase.com</email>
+                            </small>
+                        </p>
+                        <h4 class="fragment">To bi bilo sve za danas, hvala!</h4>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/reveal.js"></script>
+
+        <script>
+            // More info about config & dependencies:
+            // - https://github.com/hakimel/reveal.js#configuration
+            // - https://github.com/hakimel/reveal.js#dependencies
+            Reveal.initialize({
+                // Display presentation control arrows
+                controls: true,
+
+                // Help the user learn the controls by providing hints, for example by
+                // bouncing the down arrow when they first encounter a vertical slide
+                controlsTutorial: false,
+
+                // Determines where controls appear, "edges" or "bottom-right"
+                controlsLayout: "bottom-right",
+
+                // Visibility rule for backwards navigation arrows; "faded", "hidden"
+                // or "visible"
+                controlsBackArrows: "faded",
+
+                // Display a presentation progress bar
+                progress: true,
+
+                // Display the page number of the current slide
+                slideNumber: false,
+
+                // Add the current slide number to the URL hash so that reloading the
+                // page/copying the URL will return you to the same slide
+                hash: true,
+
+                // Push each slide change to the browser history. Implies `hash: true`
+                history: true,
+
+                // Enable keyboard shortcuts for navigation
+                keyboard: true,
+
+                // Enable the slide overview mode
+                overview: true,
+
+                // Vertical centering of slides
+                center: true,
+
+                // Enables touch navigation on devices with touch input
+                touch: true,
+
+                // Loop the presentation
+                loop: false,
+
+                // Change the presentation direction to be RTL
+                rtl: false,
+
+                // See https://github.com/hakimel/reveal.js/#navigation-mode
+                navigationMode: "default",
+
+                // Randomizes the order of slides each time the presentation loads
+                shuffle: false,
+
+                // Turns fragments on and off globally
+                fragments: true,
+
+                // Flags whether to include the current fragment in the URL,
+                // so that reloading brings you to the same fragment position
+                fragmentInURL: false,
+
+                // Flags if the presentation is running in an embedded mode,
+                // i.e. contained within a limited portion of the screen
+                embedded: false,
+
+                // Flags if we should show a help overlay when the questionmark
+                // key is pressed
+                help: true,
+
+                // Flags if speaker notes should be visible to all viewers
+                showNotes: false,
+
+                // Global override for autoplaying embedded media (video/audio/iframe)
+                // - null: Media will only autoplay if data-autoplay is present
+                // - true: All media will autoplay, regardless of individual setting
+                // - false: No media will autoplay, regardless of individual setting
+                autoPlayMedia: null,
+
+                // Global override for preloading lazy-loaded iframes
+                // - null: Iframes with data-src AND data-preload will be loaded when within
+                //   the viewDistance, iframes with only data-src will be loaded when visible
+                // - true: All iframes with data-src will be loaded when within the viewDistance
+                // - false: All iframes with data-src will be loaded only when visible
+                preloadIframes: null,
+
+                // Number of milliseconds between automatically proceeding to the
+                // next slide, disabled when set to 0, this value can be overwritten
+                // by using a data-autoslide attribute on your slides
+                autoSlide: 0,
+
+                // Stop auto-sliding after user input
+                autoSlideStoppable: true,
+
+                // Use this method for navigation when auto-sliding
+                autoSlideMethod: Reveal.navigateNext,
+
+                // Specify the average time in seconds that you think you will spend
+                // presenting each slide. This is used to show a pacing timer in the
+                // speaker view
+                defaultTiming: 120,
+
+                // Enable slide navigation via mouse wheel
+                mouseWheel: false,
+
+                // Hide cursor if inactive
+                hideInactiveCursor: true,
+
+                // Time before the cursor is hidden (in ms)
+                hideCursorTime: 5000,
+
+                // Hides the address bar on mobile devices
+                hideAddressBar: true,
+
+                // Opens links in an iframe preview overlay
+                // Add `data-preview-link` and `data-preview-link="false"` to customise each link
+                // individually
+                previewLinks: false,
+
+                // Transition style
+                transition: "slide", // none/fade/slide/convex/concave/zoom
+
+                // Transition speed
+                transitionSpeed: "default", // default/fast/slow
+
+                // Transition style for full page slide backgrounds
+                backgroundTransition: "fade", // none/fade/slide/convex/concave/zoom
+
+                // Number of slides away from the current that are visible
+                viewDistance: 5,
+
+                // Parallax background image
+                parallaxBackgroundImage: "", // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+                // Parallax background size
+                parallaxBackgroundSize: "", // CSS syntax, e.g. "2100px 900px"
+
+                // Number of pixels to move the parallax background per slide
+                // - Calculated automatically unless specified
+                // - Set to 0 to disable movement along an axis
+                parallaxBackgroundHorizontal: null,
+                parallaxBackgroundVertical: null,
+
+                // The display mode that will be used to show slides
+                display: "block",
+
+                dependencies: [
+                    { src: "plugin/markdown/marked.js" },
+                    { src: "plugin/markdown/markdown.js" },
+                    { src: "plugin/notes/notes.js", async: true },
+                    { src: "plugin/highlight/highlight.js", async: true },
+                    { src: "plugin/zoom-js/zoom.js", async: true }
+                ]
+            });
+        </script>
+    </body>
+</html>
